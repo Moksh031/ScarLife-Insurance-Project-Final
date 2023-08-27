@@ -1,0 +1,63 @@
+create table sendinformation(
+Name varchar(20),
+City varchar(20),
+Mobile varchar(10),
+EmailID varchar(50),
+Product varchar(50)
+)
+drop table sendinformation
+select * from sendinformation 
+
+
+
+
+create table feedback(
+Name varchar(20),
+EmailID varchar(50),
+Message varchar(100)
+)
+select * from feedback
+
+
+create table productdetails(
+Producttitle varchar(20),
+Productdescription varchar(500),
+Productimage image)
+select * from productdetails
+
+create procedure sp_insert(@Producttitle varchar(20), @Productdescription varchar(500), @Productimage image)
+as 
+INSERT INTO productdetails VALUES (@Producttitle,@Productdescription,@Productimage)
+DROP procedure sp_insert
+
+
+create table SubCategory(
+InsuranceCategory varchar(20),
+SubProductType varchar(30),
+SubProductDescription varchar(500),
+SubProductimage image)
+select * from SubCategory
+
+ 
+
+create procedure sp_subcategory(@InsuranceCategory varchar(20), @SubProductType varchar(30), @SubProductDescription varchar(500),@SubProductimage image)
+as 
+INSERT INTO sp_subcategory VALUES (@InsuranceCategory , @SubProductType, @SubProductDescription,@SubProductimage )
+
+
+
+
+
+
+
+create table subproductdetails(
+Insurancecatagory varchar(50),
+type varchar(50),
+description varchar(500),
+image image)
+select * from subproductdetails
+
+create procedure subp_insert(@Insurancecatagory varchar(20), @type varchar(50), @description varchar(500),@image image)
+as 
+INSERT INTO subproductdetails VALUES (@Insurancecatagory,@type,@description,@image)
+DROP procedure sp_insert
